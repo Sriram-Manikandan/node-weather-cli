@@ -1,0 +1,21 @@
+{
+  "name": "weather-cli",
+  "version": "1.0.0",
+  "description": "A simple CLI to fetch and display current weather for a specified city.",
+  "main": "src/index.js",
+  "bin": {
+    "weather-cli": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [
+    "weather",
+    "cli",
+    "node"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
