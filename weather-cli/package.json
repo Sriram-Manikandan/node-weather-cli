@@ -1,7 +1,8 @@
 {
   "name": "weather-cli",
   "version": "1.0.0",
-  "description": "A simple CLI to fetch and display current weather for a specified city.",
+  "description": "CLI that fetches and displays current weather for a specified city using Open-Meteo API",
+  "type": "module",
   "main": "src/index.js",
   "bin": {
     "weather-cli": "src/index.js"
@@ -9,8 +10,6 @@
   "scripts": {
     "start": "node src/index.js"
   },
-  "dependencies": {},
-  "devDependencies": {},
   "keywords": [
     "weather",
     "cli",
