@@ -1,56 +1,56 @@
 # Weather CLI
 
-A simple command-line interface (CLI) application that fetches and displays the current weather for a specified city using the Open-Meteo free API (no API key required).
+A lightweight command-line interface (CLI) that fetches and displays the current
+weather for a given city using the free Open‑Meteo API.  No API key is required.
+
+## Requirements
+
+- Node.js 18 or later (to provide built-in `fetch` and ES module support)
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd weather-cli
-   ```
-3. Install dependencies (none needed but run to initialize a lockfile):
-   ```bash
-   npm install
-   ```
+```bash
+git clone <repository-url>
+cd weather-cli
+npm install    # no runtime deps, creates a lockfile
+```
+
+Optionally you can link the CLI globally:
+
+```bash
+npm link
+# now you can run `weather-cli` from anywhere
+```
 
 ## Usage
 
-Provide a city name as a single argument. If you don't, the CLI will print a usage message and exit with code 2.
+Provide the city name as a single argument (quotes required if it contains spaces).
 
 ```bash
-# run directly
-node src/index.js "City Name"
-
-# or via npm script
-npm start -- "City Name"
+node src/index.js "New York"
+# or via package script
+npm start -- "New York"
+# or if linked globally:
+weather-cli "New York"
 ```
 
-### Examples
+### Example output
 
-```bash
-$ node src/index.js "New York"
-Weather in New York, United States:
-  Temperature : 15°C
-  Wind speed  : 3.5 m/s
-  Wind dir    : 220°
-  Condition   : Clear sky
+```
+Weather in New York:
+Temperature: 15°C
+Condition: Clear sky
 ```
 
-```bash
-$ node src/index.js
-Usage: node src/index.js "City Name"
-```
+### Error handling
 
-Error codes:
+- No argument: prints usage and exits with code 1.
+- City not found: prints an error and exits with code 2.
+- Network/API failure: error message and exit code 2.
 
-- `2`: missing/invalid input
-- - - - - - - - - - - - - - - - - - -or- - - - - -  `5- - - - - - - - - - - - - - - - - - -or- - - - - -  `5- - - - - - - - - - - - - - - - - - -or- - - - - -  `5- - - - - - - - - - - - - - - - - - -or- - - - - -  `5- -by a c- - - - - - -  qu- - - - - - - - - -tput for readability.
+All source logic lives in two modules (`src/index.js` and `src/weather.js`).
 
 ## License
 
-This project is licensed under the MIT License.
+MIT
 
